@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css code/style.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+    <title>Document</title>
+
+</head>
+<body>
+    <div class="main">
+
+            <!-- navbar section -->
+        <nav class="navbar">
+                <img src="./images/gameTopPanel.png" alt="" class="img2">
+                <h1 class="text3">TIME-</h1>
+                <p id="time">0:00</p>
+            <div class="moves">
+                <img src="./images/move_panel.png" alt="" class="img3">
+                <h1 class="text1">MOVES</h1>
+                <p id="move">0</p>
+            </div>
+            <div class="score">
+                <img src="./images/score_panel.png" alt="" class="img4">
+                <h1 class="text2">SCORES</h1>
+                <P id="score">0</P>
+            </div>
+        </nav>
+    </div>
+    <!-- code for pack -->
+    <div class="pack">
+        <img src="./images/q2.png" alt=""  id="q2">
+        <img src="./images/q3.png" alt=""  id="q3">
+        <img src="./images/q5.png" alt=""  id="q5">
+        <img src="./images/q6.png" alt=""  id="q6">
+        <img src="./images/q8.png" alt=""  id="q9">
+        <img src="./images/q9.png" alt=""  id="q8">
+        <img src="./images/q7.png" alt=""  id="q7">
+    </div>
+    <!-- code for stock img -->
+    <div id="droppableArea" >
+        <span class="droppable" id="d2"></span>
+        <span class="droppable" id="d3"></span>
+        <span class="droppable" id="d5"></span>
+        <span class="droppable" id="d6"></span>
+        <span class="droppable" id="d9"></span>
+        <span class="droppable" id="d8"></span>
+        <span class="droppable" id="d7"></span>
+    </div>
+
+    <script>
+
+        var num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        var moves = 0;
+        var scores = 0;
+
+        /* Making all the images draggable */
+        for (let i of num) {
+            $("#q" + i).draggable({
+                cursor: 'move'
+            })
+        }
+
+        var time_start = new Date();
+        setInterval(function () {
+            var time_end      = new Date();
+            var time_diff = (time_end - time_start);
+
+            // hours
+            var hours     = Math.floor(time_diff / 1000 / 60 / 60);
+
+            // minutes
+            time_diff     = time_diff - hours * 1000 * 60 * 60;
+            var minutes   = Math.floor(time_diff / 1000 / 60);
+
+            // seconds
+            time_diff     = time_diff - minutes * 1000 * 60;
+            var seconds   = Math.floor(time_diff / 1000);
+
+            console.log(hours, minutes, seconds);
+            document.getElementById('time').innerHTML = hours + ":" + minutes + ":" + seconds;
+
+        }, 1000);
+
+        /* Keeping a common div for the droppable area */
+        $(".droppable").droppable({
+            drop: handleDragStop
+        })
+
+        /* handles the drop event , if dropped within the required block */
+        function handleDragStop(event, ui) {
+            var draggable = ui.draggable;
+            moves++;
+            document.getElementById('move').innerHTML = moves;
+            let draggedImgId = draggable.attr('id');
+            let draggedImgIdNumber = draggedImgId['1'];
+            let draggedIntoBlockId = $(this).attr('id');
+            let draggedIntoBlockIdNumber = draggedIntoBlockId['1'];
+            ui.draggable.draggable( 'disable' );
+            $(this).droppable( 'disable' );
+
+            if (draggedImgIdNumber == draggedIntoBlockIdNumber) {
+                scores+=10;
+            } else {
+                scores-=5;
+            }
+            document.getElementById('score').innerHTML = scores;
+
+        }
+
+    </script>
+</body>
+</html>

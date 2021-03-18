@@ -1,0 +1,174 @@
+        /*top nav img section  */
+        body {
+            background-image: url('./../images/game_bg.png');
+            background-size: cover;
+        }
+        #droppableArea {
+            margin-top: 45%;
+        }
+        .droppable {
+            border: 2px solid;
+            padding: 45px 78px;
+            margin-left: 26px;
+            border-radius: 10px;
+            background-color: #ffff33;
+
+        }
+        .navbar img{
+            position: absolute;
+            top: 30px;
+            left: 35px;
+        }
+        .img1
+        {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+        /* move img section */
+        .img3
+        {
+            position:absolute;
+            margin: 18px;
+            padding-left: 840px;
+        }
+        /* score img section */
+        .img4
+        {
+            position: absolute;
+            margin: 18px;
+            padding-left: 90px;
+        }
+        /* text area for move score or time */
+        h1
+        {
+        position: absolute;
+        font-weight: bold;
+        font-family:Arial, Helvetica, sans-serif;  
+        }
+        .text1
+        {
+            top:48px;
+            left: 970px;
+        }
+        .text2
+        {
+            top:48px;
+            left:210px;
+        }
+        .text3
+        {
+            top: 9px;
+            left:560px;
+            color: white;
+            font-size: 40px;
+        }
+        p 
+        {
+            position: absolute;
+            
+        }
+        /* moves score or timer */
+        #move
+        {
+            top: 18px;
+            left: 1110px;
+            color: white;
+            font-weight: bold;
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #score
+        {
+            top: 22px;
+            left: 350px;
+            color: white;
+            font-weight: bold;
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #time
+        {
+            top: 4px;
+            left: 685px;
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        /* stocks section */
+        #img5
+        {
+            position: absolute;
+            top: 550px;
+            left: 100px
+        }
+        #img6
+        {
+            position: absolute;
+            top: 550px;
+            left: 330px;
+        }
+        #img7
+        {
+            position: absolute;
+            top: 550px;
+            left: 560px;
+        }
+        #img8
+        {
+            position: absolute;
+            top: 550px;
+            left: 790px;
+        }
+        #img9
+        {
+            position: absolute;
+            top: 550px;
+            left: 1020px;
+        }
+        /* pack section */
+        #q2
+        {
+            position: absolute;
+            top: 230px;
+            left: 100px;
+        }
+        #q3
+        {
+            position: absolute;
+            top: 232px;
+            left: 102px;
+        }
+        #q5
+        {
+            position: absolute;
+            top: 234px;
+            left: 104px;
+        }
+        #q6
+        {
+            position: absolute;
+            top: 236px;
+            left: 106px;
+        }
+        #q8
+        {
+            position: absolute;
+            top: 238px;
+            left: 108px;
+        }
+        #q9
+        {
+            position: absolute;
+            top: 240px;
+            left: 110px;
+        }
+        #q7
+        {
+            position: absolute;
+            top: 241px;
+            left: 110px;
+        cursor: pointer;
+        }
